@@ -67,7 +67,7 @@
     {
       "id": "pocket-play-launch-lifetime-50",
       "type": "popup",
-      "enabled": true,
+      "enabled": false,
       "priority": 10,
       "title": {
         "tr": "🎉 Pocket Play Lansman Fırsatı!",
