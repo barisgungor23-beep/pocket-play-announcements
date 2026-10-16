@@ -42,6 +42,27 @@
       "actionTitle": null,
       "actionURL": null,
       "displayPolicy": "once"
+    },
+    {
+      "id": "live-banner-test-20261016T104544Z",
+      "type": "banner",
+      "enabled": true,
+      "priority": 0,
+      "title": {
+        "tr": "Pocket Play’e Hoş Geldin!",
+        "en": "Welcome to Pocket Play!"
+      },
+      "message": {
+        "tr": "Yedi farklı oyunla kısa bir mola vermeye ne dersin?",
+        "en": "Take a short break with seven different games!"
+      },
+      "startDate": "2026-10-16T10:45:44Z",
+      "endDate": "2026-10-17T10:45:44Z",
+      "minAppVersion": "0.1.0",
+      "maxAppVersion": null,
+      "actionTitle": null,
+      "actionURL": null,
+      "displayPolicy": "oncePerVersion"
     }
   ]
 }
