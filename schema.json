@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pocket Play announcements v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "announcements"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "announcements": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/announcement"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "announcement": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "enabled",
+        "priority",
+        "title",
+        "message",
+        "startDate",
+        "endDate",
+        "minAppVersion",
+        "displayPolicy"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9._-]+$"
+        },
+        "type": {
+          "enum": [
+            "banner",
+            "popup"
+          ]
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": -10000,
+          "maximum": 10000
+        },
+        "title": {
+          "type": "object",
+          "required": [
+            "tr",
+            "en"
+          ],
+          "properties": {
+            "tr": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            }
+          },
+          "additionalProperties": true
+        },
+        "message": {
+          "type": "object",
+          "required": [
+            "tr",
+            "en"
+          ],
+          "properties": {
+            "tr": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "additionalProperties": true
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "minAppVersion": {
+          "type": "string",
+          "pattern": "^[0-9]{1,9}(\\.[0-9]{1,9}){0,3}$"
+        },
+        "maxAppVersion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{1,9}(\\.[0-9]{1,9}){0,3}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actionTitle": {
+          "anyOf": [
+            {
+              "type": "object",
+              "required": [
+                "tr",
+                "en"
+              ],
+              "properties": {
+                "tr": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "en": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                }
+              },
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actionURL": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional HTTPS URL without credentials. Invalid action URLs hide the action; they do not execute."
+        },
+        "displayPolicy": {
+          "enum": [
+            "once",
+            "oncePerVersion",
+            "daily",
+            "always"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

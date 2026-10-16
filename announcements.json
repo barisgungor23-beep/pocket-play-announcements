@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "announcements": [
+    {
+      "id": "example-banner-2026",
+      "type": "banner",
+      "enabled": false,
+      "priority": 5,
+      "title": {
+        "tr": "Pocket Play haberleri",
+        "en": "Pocket Play news"
+      },
+      "message": {
+        "tr": "Bu örnek metni yayınlamak istediğiniz duyuruyla değiştirin.",
+        "en": "Replace this example with your announcement before publishing."
+      },
+      "startDate": "2026-10-16T00:00:00Z",
+      "endDate": "2026-12-31T23:59:59Z",
+      "minAppVersion": "0.1.0",
+      "maxAppVersion": null,
+      "actionTitle": null,
+      "actionURL": null,
+      "displayPolicy": "oncePerVersion"
+    },
+    {
+      "id": "example-popup-2026",
+      "type": "popup",
+      "enabled": false,
+      "priority": 10,
+      "title": {
+        "tr": "Pocket Play haberleri",
+        "en": "Pocket Play news"
+      },
+      "message": {
+        "tr": "Bu örnek metni yayınlamak istediğiniz duyuruyla değiştirin.",
+        "en": "Replace this example with your announcement before publishing."
+      },
+      "startDate": "2026-10-16T00:00:00Z",
+      "endDate": "2026-12-31T23:59:59Z",
+      "minAppVersion": "0.1.0",
+      "maxAppVersion": null,
+      "actionTitle": null,
+      "actionURL": null,
+      "displayPolicy": "once"
+    }
+  ]
+}
